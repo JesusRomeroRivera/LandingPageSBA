@@ -1,0 +1,85 @@
+.header{
+    position: relative;
+    z-index: 10;
+    width: 100vw;
+    height: 80px;
+    &.fixed{
+        position: fixed;
+        background-color: rgba(120, 120, 120, 0.6);
+        top: 0;
+        z-index: 1;
+        border-bottom: 0;  
+        img{
+            margin-left: 60px;
+        }
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: white;
+    .header-logo{
+        display: flex;
+        align-items: center;
+        img{
+            height: 50px;
+            margin-left: 60px;
+            margin-top: -3px;
+        }
+        h1{
+            color: @principal-color;
+            margin: 0;
+            font-weight: 700;
+            font-size: 30px;
+            margin-left: 5px;
+            letter-spacing: -1px;
+            font-family: @title-font;
+            &.fixed{
+                color: white;
+            }
+        }
+    }
+    .header-nav{
+        width: 40vw;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        &.fixed{
+            width: 40vw;
+        }
+        .header-ol{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+            .header-line{
+                height: 20px;
+                width: 2px;
+                background-color: black;
+                &.fixed{
+                    background-color: white;
+                }
+            }
+            li{
+                list-style: none;
+                .all-center;
+                a{
+                    text-transform: uppercase;
+                    font-family: @principal-font;
+                    font-weight: 700;
+                    font-size: 14px;
+                    color: black;
+                    &.fixed{
+                        color: white;
+                    }
+                    &:hover{
+                        text-decoration: none;
+                        color: #BCBCBC;
+                        transition: @modal-time - 0.3s;
+                    }
+                }
+            }
+        }
+    }
+}
