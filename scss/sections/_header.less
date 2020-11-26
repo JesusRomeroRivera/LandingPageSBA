@@ -1,29 +1,36 @@
 .header{
-    position: relative;
+    position: fixed;
     z-index: 10;
     width: 100vw;
     height: 80px;
-    &.fixed{
-        position: fixed;
-        background-color: rgba(120, 120, 120, 0.6);
-        top: 0;
-        z-index: 1;
-        border-bottom: 0;  
-        img{
-            margin-left: 60px;
-        }
-    }
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    background-color: white;
+    top: 0;
+    left: 0;
+    transition: 0.6s;
+    background-color: transparent;
+    .efecto-blur;
+    &.sticky{
+        background-color: white;
+        height: 60px;
+        .header-logo h1{ 
+            color: @principal-color;
+        }
+        .header-nav ol li a{
+            color: black;   
+        }
+    }
+    &.otherNoIndex{
+        position: inline;
+    }
     .header-logo{
         display: flex;
         align-items: center;
         img{
             height: 50px;
-            margin-left: 60px;
+            margin-left: 50px;
             margin-top: -3px;
         }
         h1{
@@ -34,9 +41,7 @@
             margin-left: 5px;
             letter-spacing: -1px;
             font-family: @title-font;
-            &.fixed{
-                color: white;
-            }
+            color: white;
         }
     }
     .header-nav{
@@ -44,21 +49,20 @@
         height: 80px;
         display: flex;
         align-items: center;
-        &.fixed{
-            width: 40vw;
-        }
+        transition: 0.6s;
         .header-ol{
             width: 100%;
             display: flex;
             justify-content: space-between;
             padding: 0;
             margin: 0;
+            transition: 0.6s;
             .header-line{
                 height: 20px;
                 width: 2px;
-                background-color: black;
-                &.fixed{
-                    background-color: white;
+                background-color: white;
+                &.sticky{
+                    background-color: black;
                 }
             }
             li{
@@ -69,13 +73,10 @@
                     font-family: @principal-font;
                     font-weight: 700;
                     font-size: 14px;
-                    color: black;
-                    &.fixed{
-                        color: white;
-                    }
+                    color: white;
                     &:hover{
                         text-decoration: none;
-                        color: #BCBCBC;
+                        color: @principal-color;
                         transition: @modal-time - 0.3s;
                     }
                 }

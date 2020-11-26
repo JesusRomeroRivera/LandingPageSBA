@@ -1,15 +1,17 @@
 .not-visible() {
-  top: 50px;
   animation-name: modaOut;
   @keyframes modaOut {
-  0% {
-      left:(5px);
+    0% {
+      left: 0px;
+    }
+    10% {
+      left: -20px;
     }
     60% {
-      left:(-10px);
+      left:(-35px);
     }
     75% {
-      left:(25px);
+      left:(0px);
     }
     100% {
       left:(-3000px);
@@ -19,21 +21,34 @@
   animation-duration: @modal-time;
 }
 
+.not-visible-fast() {
+  animation-name: modaOutFast;
+  @keyframes modaOutFast {
+    0% {
+      left: 0px;
+    }
+    100% {
+      right:(-3000px);
+    }
+  }
+  animation-fill-mode: forwards;
+  animation-duration: @modal-time;
+}
+
 .visible() {
-  top: 50px;
   animation-name: modaIn;
   @keyframes modaIn {
-    0% {
+      0% {
         left:-3000px;
       }
       60% {
-        left:25px;
+        left: 0px;
       }
       75% {
-        left:-10px;
+        left: -35px;
       }
       90% {
-        left:5px;
+        left: 0px;
       }
       100% {
         left: 0;
@@ -52,6 +67,172 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.ancle-design(){
+  cursor: pointer;
+  font-style: normal;
+  color: rgb(74, 123, 255);
+  &:hover{
+    text-decoration: underline;
+    color:rgb(0, 86, 179);
+    }
+}
+
+.background-design(){
+  height: 80vh;
+  background-image: url("../assets/images/fondo.jpg");
+  background-size: cover;
+}
+
+.back-design(){
+  padding: 15px 30px;
+  a{
+    width: 55px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    i{
+      cursor: pointer;
+      margin-right: 5px;
+      margin-top: 1px;
+    }
+    p{
+      margin: 0;
+      cursor: pointer;
+      font-style: normal;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.back-design-popUp(){
+  padding: 15px 30px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  i{
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 1px;
+  }
+  p{
+    margin: 0;
+    cursor: pointer;
+    font-style: normal;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+.button-design(){
+  width: 120px;
+  height: 40px;
+  border-radius: 7.5px;
+  border: 1px solid black;  
+}
+
+.input-design(){
+  margin: 5px;
+  border-radius: 7.5px;
+  padding-left: 10px;
+  border: 1px solid #767676;  
+}
+
+.display-design(){
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-design(){
+  margin-top: 5px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.titlepage-design(){
+  background: @header-color;
+  border-radius: 30px 30px 0 0;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+
+.conjuntos-design(){
+  height: 7vh;
+  margin: 0.5vh 0;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  background-color: rgba(180, 180, 180, 0.5);
+}
+
+.titlewborder-design(){
+  background: @header-color;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.button-hover-design(){
+  &:hover{
+    transition: 0.4s;
+    color: white;
+    background: rgb(255, 178, 35);
+  }
+}
+
+.header-design(){
+  ol{
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    li{
+        box-sizing: border-box;
+        list-style: none;
+        margin-left: 25px;
+        margin-right: 25px;
+        display: flex;
+        align-items: center;
+        a{
+            height: 5vh;
+            border-radius: 15px;
+            .all-center;
+            width: 150px;
+            color: black;
+            margin: 0;
+            &:hover{
+                transition: @modal-time - 0.3s;
+                background-color: white;
+                text-decoration: none;
+            }
+            &.active{
+                background-color: white;
+                border: 1px solid rgba(234,234,234,1);
+                text-decoration: none;
+            }
+        }
+    }
+  }
+}
+
+.efecto-blur(){
+  transition: 0.3s;
+  &.blur{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+  }
 }
 
 .button-design(){
