@@ -5,6 +5,9 @@
     box-sizing: border-box;
     padding: 50px;
     padding-left: 120px;
+    @media @especial-landscape{
+        padding: 20px 5vw;
+    }
     .all-center;
     justify-content: space-between;
     .efecto-blur;
@@ -26,7 +29,10 @@
         .descargar-text{
             margin: 0;
             margin-top: 10px;
-            width: 720px
+            width: 720px;
+            @media @especial-landscape{
+                width: 90vw;
+            }
         }
         .descargar-button{
             margin-top: 25px;

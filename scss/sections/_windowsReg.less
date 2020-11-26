@@ -24,6 +24,9 @@
         border-radius: 30px;
         display: grid;
         grid-template-rows: 1fr 50px 1fr;
+        @media @especial-landscape{
+            padding: 5px;
+        }
         .establecimiento-text{
             opacity: 1;
             display: grid;
@@ -42,6 +45,11 @@
                 margin-top: 15px;
                 .button-design;
                 justify-self: center;
+                @media @especial-landscape{
+                    width: 100px;
+                    margin: 0;
+                    margin-left: 5px;
+                }
             }
         }
     }

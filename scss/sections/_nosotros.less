@@ -6,22 +6,44 @@
     justify-content: space-between;
     .efecto-blur;
     background-color: #FEFEFE;
+    @media @especial-landscape{
+        height: 840px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     .nosotros-img{
         width: 49vw;
         height: 740px;
+        @media @especial-landscape{
+            margin-top: 15px;
+            width: 50vw;
+            height: 400px;
+        }
     }
     .nosotros-container{
         height: 740px;
         width: 51vw;
         box-sizing: border-box;
         padding: 150px 120px 140px 20px;
+        @media @especial-landscape{
+            padding: 25px;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
         .nosotros-title{
             font-family: @title-font;
             font-size: 48px;
             margin: 0;
+            @media @especial-landscape{
+                text-align: center;
+            }
         }
         .nosotros-line{
-            width: 180px;
+            width: 90vw;
             height: 3px;
             background-color: @principal-color;
             margin: 20px 0px;
@@ -30,10 +52,18 @@
             color: black;
             font-size: 20px;
             margin-bottom: 30px;
+            @media @especial-landscape{
+                font-size: 18px;
+                text-align: center;
+            }
         }
         .nosotros-text-2{
             margin-bottom: 30px;
             color: gray;
+            @media @especial-landscape{
+                font-size: 16px;
+                text-align: center;
+            }
         }
         .nosotros-button{
             .button-design;

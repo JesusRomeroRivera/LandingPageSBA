@@ -3,6 +3,9 @@
     height: 740px;
     background-size: cover;
     .efecto-blur;
+    @media @especial-landscape{
+        height: 870px;
+    }
     background-image: url("../assets/images/servicios.png");
     .servicios-container{
         width: 100%;
@@ -35,6 +38,9 @@
             display: grid;
             grid-template-columns: 1fr 2px 1fr 2px 1fr;
             grid-template-rows: 1fr 1fr;
+            @media @especial-landscape{
+                grid-template-columns: 1fr 2px 1fr;
+            }
             .servicios-item{
                 .all-center;
                 flex-direction: column;
@@ -64,6 +70,11 @@
                 width: 2px;
                 background-color: @principal-color;
                 border: 0;
+            }
+            @media @especial-landscape{
+                .se-ira{
+                    display: none;
+                }
             }
         }
     }

@@ -12,6 +12,65 @@
     transition: 0.6s;
     background-color: transparent;
     .efecto-blur;
+    .menu-btn{
+        display: none;
+    }
+    @media @especial-landscape{
+        .menu-btn{
+            position: relative;
+            left: -55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: all .5s ease-in-out;
+            .menu-btn__burger {
+                width: 30px;
+                height: 5px;
+                background: black;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(255,101,47,.2);
+                transition: all .5s ease-in-out;
+            }
+              .menu-btn__burger::before,
+              .menu-btn__burger::after {
+                content: '';
+                position: absolute;
+                width: 30px;
+                height: 5px;
+                background-color: black;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(255,101,47,.2);
+                transition: all .5s ease-in-out;
+              }
+              .menu-btn__burger::before {
+                transform: translateY(-10px);
+              }
+              .menu-btn__burger::after {
+                transform: translateY(10px);
+              }
+              /* ANIMATION */
+              &.open .menu-btn__burger {
+                transform: translateX(50px);
+                background: transparent;
+                box-shadow: none;
+              }
+              &.open .menu-btn__burger::before {
+                transform: rotate(45deg) translate(-35px, 35px);
+              }
+              &.open .menu-btn__burger::after {
+                transform: rotate(-45deg) translate(-35px, -35px);
+              }
+        }
+    }
+    @media @especial-landscape{
+        background-color: white;
+        .header-logo h1{ 
+            color: @principal-color;
+        }
+    }
     &.sticky{
         background-color: white;
         height: 60px;
@@ -19,11 +78,17 @@
             color: @principal-color;
         }
         .header-nav ol li a{
-            color: black;   
+            color: black;
+            @media @especial-landscape{
+                color: white;
+            }
         }
     }
     &.otherNoIndex{
         position: inline;
+        @media @especial-landscape{
+            position: block;
+        }
     }
     .header-logo{
         display: flex;
@@ -34,7 +99,6 @@
             margin-top: -3px;
         }
         h1{
-            color: @principal-color;
             margin: 0;
             font-weight: 700;
             font-size: 30px;
@@ -42,14 +106,37 @@
             letter-spacing: -1px;
             font-family: @title-font;
             color: white;
+            @media @especial-landscape{
+                color: @principal-color;
+            }
         }
     }
     .header-nav{
         width: 40vw;
-        height: 80px;
+        height: auto;
         display: flex;
         align-items: center;
         transition: 0.6s;
+        @media @especial-landscapeJA{
+            width: 70vw;
+        }
+        @media @especial-landscape{
+            flex-direction: column;
+            width: 100vw;
+            position: absolute;
+            top: 80px;
+            border-top: 1px solid @principal-color;
+            left: -3000px;
+            &.not-active{
+                .not-visible;
+            }
+            &.is-active{
+                .visible;
+            }
+            &.sticky{
+                top: 60px;
+            }
+        }
         .header-ol{
             width: 100%;
             display: flex;
@@ -57,6 +144,12 @@
             padding: 0;
             margin: 0;
             transition: 0.6s;
+            @media @especial-landscape{
+                flex-direction: column;
+                .La-mata{
+                    display: none;
+                }
+            }
             .header-line{
                 height: 20px;
                 width: 2px;
@@ -64,10 +157,22 @@
                 &.sticky{
                     background-color: black;
                 }
+                @media @especial-landscape{
+                    display: none;
+                }
             }
             li{
                 list-style: none;
                 .all-center;
+                @media @especial-landscape{
+                    width: 100vw;
+                    height: 5vh;
+                    background-color: #c0c0c0;
+                    border-bottom: 1px solid #787878;
+                }
+                @media @especial-landscapeJA{
+                    margin-right: 10px;
+                }
                 a{
                     text-transform: uppercase;
                     font-family: @principal-font;

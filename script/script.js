@@ -3,6 +3,8 @@ window.addEventListener("scroll", function(){
     header.classList.toggle("sticky", window.scrollY > 0);
     var line = document.querySelector(".header-line");
     line.classList.toggle("sticky", window.scrollY > 0);
+    var aux = document.querySelector(".header-nav");
+    aux.classList.toggle("sticky", window.scrollY > 0);
 })
 
 const $estableButton = document.querySelector(".tecnico-buttonRegister");
@@ -69,6 +71,22 @@ $backButton.addEventListener("click", () => {
     $footer.classList.toggle("blur");
     $body.classList.toggle("blur");
 })
+
+const $menuBtn = document.querySelector('.menu-btn');
+const $headerNav = document.querySelector('.header-nav');
+
+let menuOpen = true;
+
+$menuBtn.addEventListener('click', () => { 
+    if(menuOpen) {
+      $headerNav.classList.add('is-active'); 
+      menuOpen = false;
+    }else{
+      $headerNav.classList.toggle('not-active');
+      $headerNav.classList.toggle('is-active');
+    }
+    $menuBtn.classList.toggle('open');    
+});
 
 
 
