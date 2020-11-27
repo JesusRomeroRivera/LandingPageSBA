@@ -16,7 +16,7 @@ En el informe word están incluidos todos los wireframes y mockups (Diseños de 
 
 ## Despliegue 📦
 
-_Agrega notas adicionales sobre como hacer deploy_
+Tener conexión a internet activa.
 
 ## Construido con 🛠️
 
